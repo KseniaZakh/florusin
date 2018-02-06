@@ -9,8 +9,7 @@ function resize () {
 		}
 
 		if ($("div.container > footer").length!=0) {
-			var footer_height = $("div.container > footer").outerHeight();
-			$("div.container").css({"padding-bottom" : footer_height + 70 + "px"});
+			$("div.container").css({"padding-bottom" : ($("div.container > footer").outerHeight()+70) + "px"});
 		}
 	}
 
