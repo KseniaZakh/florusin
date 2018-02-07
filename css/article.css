@@ -39,7 +39,7 @@ article h1:after {
 	left: calc(50% - 50px);
 }
 
-article ul {
+article > div > ul {
 	padding-left: 55px;
 }
 
