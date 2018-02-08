@@ -6,7 +6,7 @@ ul.catalogue {
 	width: 100%;
 }
 
-ul.catalogue > li> a {
+ul.catalogue > li a {
 	display: block;
 	color: inherit;
 }
@@ -34,15 +34,18 @@ span.cat_name:after {
 	bottom: 5px;
 }
 
+a.cat_img {
+	overflow: hidden;
+}
+
 a.cat_img > img {
 	max-width: 100%;
 	max-height: 100%;
-	border: 1px solid rgba(200, 193, 188, 1);
 }
 
 a.cat_img:hover > img {
-	transform: scale(1.05);
-	transition: all 0.25s;
+	transform: scale(1.1);
+	transition: all 0.5s;
 }
 
 a.cat_info {
@@ -52,7 +55,7 @@ a.cat_info {
 a.cat_more {
 	width: 180px;
 	height: 50px;
-	background-color: rgba(254, 69, 129, 1);
+	background-color: rgba(254, 96, 129, 1);
 	border-radius: 5px;
 	font : bold 18px/50px "SFUIDisplay-Regular", Arial, sans-serif;
 	color: rgba(255, 255, 255, 1) !important;
@@ -86,7 +89,8 @@ li.next {
 }
 
 li.prev > a:before {
-	content: "\003C";
+	content: "\F104";
+	font-family: "Font Awesome";
 	position: absolute;
 	color: rgba(254, 69, 129, 1);
 	text-align: center;
@@ -96,24 +100,14 @@ li.prev > a:before {
 }
 
 li.next > a:before {
-	content: "\003E";
+	content: "\F105";
 	position: absolute;
+	font-family: "Font Awesome";
 	color: rgba(254, 69, 129, 1);
 	text-align: center;
 	font-size: 24px;
 	width: 100%;
 	height: 100%;
-}
-
-li.page:hover > a:not(.selected):after {
-	content: "";
-	position: absolute;
-	background-color: rgba(254, 96, 124, 0.5);
-	width: 100%;
-	height: 100%;
-	text-align: center;
-	border-radius: 50%;
-	transition: all 0.25s;
 }
 
 li.prev:hover > a:after,
@@ -151,9 +145,25 @@ ol > li.page > a:before {
 	text-align: center;
 }
 
-ol > li.selected > a::before {
+ol > li.selected > a:before {
 		color: rgba(255, 255, 255, 1);
 		z-index: 3;
+}
+
+li.page:not(.selected):hover > a:after {
+	content: "";
+	position: absolute;
+	background-color: rgba(254, 96, 129, 0.75);
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	border-radius: 50%;
+	transition: all 0.25s;
+}
+
+ol > li.page:hover > a:before {
+	color: rgba(255, 255, 255, 1);
+	z-index: 3;
 }
 
 ol > li.selected > a:after {
@@ -164,7 +174,6 @@ ol > li.selected > a:after {
 	height: 40px;
 	border-radius: 50%;
 }
-
 
 @media only screen and (min-width: 961px) and (max-width: 1240px) {
 

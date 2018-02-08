@@ -51,6 +51,7 @@ nav ul > li:hover > a {
 		background-color: rgba(0, 0, 0, 0.5);
 		width: 100%;
 		z-index: 20;
+		height: 100%;
 		left: 0;
 
 	}
@@ -58,6 +59,7 @@ nav ul > li:hover > a {
 	nav ul {
 		padding-top: 20px;
 		width: 280px;
+		height: 100%;
 		left: -280px;
 	}
 
@@ -70,12 +72,7 @@ nav ul > li:hover > a {
 @media (min-width: 541px) and (max-width: 960px) {
 
 		nav.opened {
-			height: calc(100vh - 105px);
 			top: 105px;
-		}
-
-		nav ul {
-			height: calc(100vh - 105px);
 		}
 
 		nav ul > li {
@@ -87,12 +84,7 @@ nav ul > li:hover > a {
 @media (max-width: 540px) {
 
 	nav.opened {
-		height: calc(100vh - 125px);
 		top: 125px;
-	}
-
-	nav ul {
-		height: calc(100vh - 125px);
 	}
 
 	nav ul > li {

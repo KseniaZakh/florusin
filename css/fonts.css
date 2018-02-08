@@ -29,3 +29,14 @@
 		font-style: normal;
 		font-weight: normal;
 }
+
+@font-face {
+		font-family: "Font Awesome";
+		src: url("../fonts/fontawesome.eot");
+		src: url("../fonts/fontawesome.eot#iefix") format("embedded-opentype"),
+				url("../fonts/fontawesome.woff?20180802") format("woff"),
+				url("../fonts/fontawesome.woff2?20180802") format("woff2"),
+				url("../fonts/fontawesome.ttf") format("truetype");
+		font-style: normal;
+		font-weight: normal;
+}
