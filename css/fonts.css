@@ -11,6 +11,16 @@
 		}
 
 @font-face {
+		   font-family: "SFUIDisplay-Bold";
+		   src: url("../fonts/SFUIDisplay-Bold.eot");
+		   src: url("../fonts/SFUIDisplay-Bold.eot?#iefix") format("embedded-opentype"),
+		    	url("../fonts/SFUIDisplay-Bold.woff") format("woff"),
+		    	url("../fonts/SFUIDisplay-Bold.otf") format("opentype");
+		   	font-style: normal;
+		    font-weight: normal;
+			}
+
+@font-face {
 		font-family: "Constantia-Regular";
 		src: url("../fonts/constan.eot");
 		src: url("../fonts/constan.eot#iefix") format("embedded-opentype"),
