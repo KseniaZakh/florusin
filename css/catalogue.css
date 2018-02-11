@@ -34,6 +34,7 @@ a.cat_item > div.cat_img {
 	overflow: hidden;
 	max-width: 100%;
 	max-height: 100%;
+	border: 1px solid rgba(220, 220, 220, 1);
 }
 
 div.cat_img > img {
@@ -185,36 +186,22 @@ ol > li.selected > a:after {
 	border-radius: 50%;
 }
 
-@media only screen and (min-width: 961px) and (max-width: 1240px) {
+@media only screen and (min-width: 961px) {
 
-	ul.catalogue > li {
-		width: calc((100% - 80px) / 3);
-		margin-right: 20px;
+	ul.catalogue {
+		padding-left: 40px;
+		padding-right: 40px;
+		margin-top: 50px;
 	}
 
-	ul.catalogue > li:nth-child(3n+1) {
-		margin-left: 20px;
-	}
-}
-
-@media only screen and (min-width: 1241px) {
 	ul.catalogue > li {
 		width: calc((100% - 40px) / 3);
+		margin-bottom: 50px;
 	}
 
 	ul.catalogue > li:nth-child(3n+1),
 	ul.catalogue > li:nth-child(3n+2) {
 		margin-right: 20px;
-	}
-}
-@media only screen and (min-width: 961px) {
-
-	ul.catalogue {
-		margin: 50px auto 0;
-	}
-
-	ul.catalogue > li {
-		margin-bottom: 50px;
 	}
 
 	span.cat_name {

@@ -1,0 +1,158 @@
+@charset "UTF-8";
+
+ul.news {
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+	margin-top: 10px;
+}
+
+ul.news > li {
+	margin-bottom: 50px;
+}
+
+ul.news > li:not(:last-child) > a{
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	justify-content: space-between;
+	color: inherit;
+	transition : all 0.25s ease;
+}
+
+ul.news > li:not(:last-child) > a:hover h3 {
+	color: rgba(254, 96, 129, 1);
+	transition : all 0.25s ease;
+}
+
+ul.news .news_img {
+	position: relative;
+}
+
+ul.news .news_img:before {
+	transition : all 0.25s ease;
+}
+
+ul.news > li:not(:last-child) > a:hover > .news_img:before {
+	content: "";
+	position: absolute;
+	background-color: rgba(0, 0, 0, 0.5);
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	z-index: 5;
+	transition : all 0.25s ease;
+}
+
+ul.news img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+ul.news time {
+	font : normal 14px/64px "SFUIDisplay-Regular", Arial, sans-serif;
+	color: rgba(167, 166, 173, 1);
+}
+
+ul.news > li:last-child {
+	width: 100%;
+}
+
+ul.news a.more {
+	margin: 0 auto;
+}
+
+@media only screen and (min-width: 961px) {
+
+	ul.news {
+		padding-left: 40px;
+		padding-right: 40px;
+	}
+
+
+	ul.news > li {
+		width: calc((100% - 40px) / 3);
+	}
+
+	ul.news > li:first-child,
+	ul.news > li:nth-child(2) {
+		margin-right: 20px;
+	}
+
+	ul.news h3 {
+		font : normal 26px/34px "Constantia-Bold", "Times New Roman", serif;
+	}
+
+	ul.news > li.var2,
+	ul.news > li.var2 + li {
+		display: none;
+	}
+}
+
+@media (min-width: 541px) and (max-width: 960px) {
+
+	ul.news {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+
+	ul.news > li.var1:nth-child(3) {
+		display: none;
+	}
+
+	ul.news > li.var1 {
+		width: calc((100% - 20px) / 2);
+	}
+
+	ul.news > li.var1:first-child {
+		margin-right: 20px;
+	}
+
+	ul.news h3 {
+		font : normal 22px/30px "Constantia-Bold", "Times New Roman", serif;
+	}
+
+	ul.news > li.var2 {
+		width: 100%;
+	}
+
+	ul.news > li.var2 > a {
+		flex-direction: row;
+	}
+
+	ul.news > li.var2 > a > div {
+		width: calc((100% - 20px) / 2);
+	}
+
+	ul.news > li.var2 > a > div:first-child {
+		margin-right: 20px;
+	}
+
+	ul.news > li.var2:nth-child(3) > a > div:first-child,
+	 ul.news > li.var2:first-child > a > div:first-child {
+		align-self: center;
+	}
+
+}
+
+@media (max-width: 540px) {
+
+	ul.news {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+
+		ul.news > li {
+			width: 100%;
+		}
+
+	ul.news h3 {
+		font : normal 20px/28px "Constantia-Bold", "Times New Roman", serif;
+	}
+
+	ul.news > li.var2,
+	ul.news > li.var2 + li {
+		display: none;
+	}
+}
