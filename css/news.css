@@ -50,7 +50,7 @@ ul.news img {
 	max-height: 100%;
 }
 
-ul.news time {
+ul.news .date {
 	font : normal 14px/64px "SFUIDisplay-Regular", Arial, sans-serif;
 	color: rgba(167, 166, 173, 1);
 }
