@@ -18,6 +18,7 @@ ul.catalogue span {
 
 span.cat_name {
 	position: relative;
+	transition : all 0.25s ease;
 }
 
 span.cat_name:after {
@@ -33,7 +34,6 @@ span.cat_name:after {
 a.cat_item > div.cat_img {
 	overflow: hidden;
 	border: 1px solid rgba(220, 220, 220, 1);
-
 }
 
 div.cat_img > img {
@@ -44,12 +44,10 @@ div.cat_img > img {
 
 a.cat_item:hover > div.cat_img > img {
 	transform: scale(1.1);
-	transition : all 0.25s ease;
 }
 
 a.cat_item:hover span.cat_name {
 	color: rgba(254, 96, 129, 1);
-	transition : all 0.25s ease;
 }
 
 a.cat_info {
@@ -86,6 +84,7 @@ li.prev > a:before {
 	font-size: 24px;
 	width: 100%;
 	height: 100%;
+	transition : all 0.25s ease;
 }
 
 li.next > a:before {
@@ -97,6 +96,7 @@ li.next > a:before {
 	font-size: 24px;
 	width: 100%;
 	height: 100%;
+	transition : all 0.25s ease;
 }
 
 li.prev > a:after,
@@ -120,7 +120,6 @@ li.prev:hover > a:before,
 li.next:hover > a:before {
 	color: rgba(255, 255, 255, 1);
 	z-index: 3;
-	transition : all 0.25s ease;
 }
 
 .pagination > ol {
@@ -191,17 +190,13 @@ ol > li.selected > a:after {
 
 	ul.catalogue {
 		padding-left: 40px;
-		padding-right: 40px;
+		padding-right: 20px;
 		margin-top: 50px;
 	}
 
 	ul.catalogue > li {
-		width: calc((100% - 40px) / 3);
+		width: calc((100% - 60px) / 3);
 		margin-bottom: 50px;
-	}
-
-	ul.catalogue > li:nth-child(3n+1),
-	ul.catalogue > li:nth-child(3n+2) {
 		margin-right: 20px;
 	}
 
