@@ -227,15 +227,6 @@ ol > li.selected > a:after {
 		margin-right: 20px;
 	}
 
-	/* ul.catalogue > li:nth-child(odd) {
-		margin-left: 20px;
-		margin-right: 20px;
-	}
-
-	ul.catalogue > li:nth-child(even) {
-		margin-right: 20px;
-	} */
-
 	span.cat_name {
 		font : normal 20px/26px "SFUIDisplay-Regular", Arial, sans-serif;
 		padding-top: 20px;
