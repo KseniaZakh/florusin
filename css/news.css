@@ -11,7 +11,7 @@ ul.news > li {
 	margin-bottom: 50px;
 }
 
-ul.news > li:not(:last-child) > a{
+ul.news > li > a{
 	display: flex;
 	flex-direction: column;
 	height: 100%;
@@ -20,7 +20,7 @@ ul.news > li:not(:last-child) > a{
 	transition : all 0.25s ease;
 }
 
-ul.news > li:not(:last-child) > a:hover h3 {
+ul.news > li > a:hover h3 {
 	color: rgba(254, 96, 129, 1);
 	transition : all 0.25s ease;
 }
@@ -33,7 +33,7 @@ ul.news .news_img:before {
 	transition : all 0.25s ease;
 }
 
-ul.news > li:not(:last-child) > a:hover > .news_img:before {
+ul.news > li > a:hover > .news_img:before {
 	content: "";
 	position: absolute;
 	background-color: rgba(0, 0, 0, 0.5);
@@ -55,11 +55,8 @@ ul.news .date {
 	color: rgba(167, 166, 173, 1);
 }
 
-ul.news > li:last-child {
-	width: 100%;
-}
 
-ul.news a.more {
+a.more {
 	margin: 0 auto;
 }
 
@@ -75,8 +72,8 @@ ul.news a.more {
 		width: calc((100% - 40px) / 3);
 	}
 
-	ul.news > li:first-child,
-	ul.news > li:nth-child(2) {
+	ul.news > li:nth-child(3n+1),
+	ul.news > li:nth-child(3n+2) {
 		margin-right: 20px;
 	}
 
@@ -84,8 +81,7 @@ ul.news a.more {
 		font : normal 26px/34px "Constantia-Bold", "Times New Roman", serif;
 	}
 
-	ul.news > li.var2,
-	ul.news > li.var2 + li {
+	ul.news > li.var2 {
 		display: none;
 	}
 }
@@ -97,7 +93,7 @@ ul.news a.more {
 		padding-right: 20px;
 	}
 
-	ul.news > li.var1:nth-child(3) {
+	ul.news > li.var1:nth-child(3n+3) {
 		display: none;
 	}
 
@@ -105,12 +101,16 @@ ul.news a.more {
 		width: calc((100% - 20px) / 2);
 	}
 
-	ul.news > li.var1:first-child {
+	ul.news > li:nth-child(3n+1) {
 		margin-right: 20px;
 	}
 
 	ul.news h3 {
 		font : normal 22px/30px "Constantia-Bold", "Times New Roman", serif;
+	}
+
+	ul.news > li.var2:first-child {
+		margin-top: 40px;
 	}
 
 	ul.news > li.var2 {
