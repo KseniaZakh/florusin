@@ -1,17 +1,5 @@
 @charset "UTF-8";
 
-ul.catalogue {
-	display: flex;
-	flex-wrap: wrap;
-	width: 100%;
-}
-
-a.cat_item {
-	display: flex;
-	flex-direction: column;
-	color: inherit;
-}
-
 ul.catalogue span {
 	display: block;
 }
@@ -54,150 +42,14 @@ a.cat_info {
 	flex: 1 1 auto;
 }
 
-.pagination {
-	width: 100% !important;
-	margin-bottom: 0 !important;
-}
-
-.pagination > ol > li > a {
-	display: block;
-	position: relative;
-	width: 100%;
-	height: 100%;
-	color: inherit;
-}
-
-li.prev {
-	margin-right: 25px;
-}
-
-li.next {
-	margin-left: 25px;
-}
-
-li.prev > a:before {
-	content: "\F104";
-	font-family: "Font Awesome";
-	position: absolute;
-	color: rgba(254, 69, 129, 1);
-	text-align: center;
-	font-size: 24px;
-	width: 100%;
-	height: 100%;
-	transition : all 0.25s ease;
-}
-
-li.next > a:before {
-	content: "\F105";
-	position: absolute;
-	font-family: "Font Awesome";
-	color: rgba(254, 69, 129, 1);
-	text-align: center;
-	font-size: 24px;
-	width: 100%;
-	height: 100%;
-	transition : all 0.25s ease;
-}
-
-li.prev > a:after,
-li.next > a:after {
-	content: "";
-	position: absolute;
-	background-color: rgba(254, 96, 129, 0.75);
-	width: 100%;
-	height: 100%;
-	border-radius: 50%;
-	transform : scale(0, 0);
-	transition : all 0.25s ease;
-}
-
-li.prev:hover > a:after,
-li.next:hover > a:after {
-	transform : scale(1, 1);
-}
-
-li.prev:hover > a:before,
-li.next:hover > a:before {
-	color: rgba(255, 255, 255, 1);
-	z-index: 3;
-}
-
-.pagination > ol {
-	width: 280px;
-	margin: 10px auto;
-	padding: 0;
-	counter-reset: my-counter;
-}
-
-.pagination > ol > li {
-	display: inline-block;
-	font: normal 18px/40px "SFUIDisplay-Regular", Arial, sans-serif;
-	width: 40px;
-	height: 40px;
-}
-.pagination > ol > li:nth-child(2),
-.pagination > ol > li:nth-child(3) {
-	margin-right: 5px;
-}
-
-ol > li.page > a:before {
-	content: counter(my-counter);
-	counter-increment: my-counter;
-	position: absolute;
-	font: normal 18px/40px "SFUIDisplay-Regular", Arial, sans-serif;
-	width: 100%;
-	height: 100%;
-	text-align: center;
-	transition : all 0.25s ease;
-}
-
-ol > li.selected > a:before {
-		color: rgba(255, 255, 255, 1);
-		z-index: 3;
-}
-
-li.page:not(.selected) > a:after {
-	content: "";
-	position: absolute;
-	background-color: rgba(254, 96, 129, 0.75);
-	width: 100%;
-	height: 100%;
-	text-align: center;
-	border-radius: 50%;
-	transform : scale(0, 0);
-	transition : all 0.25s ease;
-}
-
-li.page:not(.selected):hover > a:after {
-	transform : scale(1, 1);
-}
-
-ol > li.page:hover > a:before {
-	color: rgba(255, 255, 255, 1);
-	z-index: 3;
-}
-
-ol > li.selected > a:after {
-	content: "";
-	position: absolute;
-	background-color: rgba(254, 96, 124, 1);
-	width: 40px;
-	height: 40px;
-	border-radius: 50%;
-}
-
 @media only screen and (min-width: 961px) {
 
 	ul.catalogue {
-		padding-left: 40px;
-		padding-right: 20px;
 		margin-top: 50px;
 	}
 
 	ul.catalogue > li {
-		width: calc((100% - 60px) / 3);
 		margin-bottom: 50px;
-		margin-right: 20px;
 	}
 
 	span.cat_name {
@@ -218,13 +70,10 @@ ol > li.selected > a:after {
 
 	ul.catalogue {
 		margin-top: 30px;
-		padding-left: 20px;
 	}
 
 	ul.catalogue > li {
-		width: calc((100% - 40px) / 2);
 		margin-bottom: 30px;
-		margin-right: 20px;
 	}
 
 	span.cat_name {
@@ -248,8 +97,8 @@ ol > li.selected > a:after {
 	}
 
 	ul.catalogue > li {
-		width: calc(100% - 40px);
-		margin: 10px 20px 30px 20px;
+		margin-top: 10px;
+		margin-bottom: 30px;
 	}
 
 	span.cat_name {
