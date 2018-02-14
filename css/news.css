@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 ul.news {
-	margin-top: 10px;
+	margin-top: 30px;
 }
 
 ul.news > li {
@@ -25,7 +25,7 @@ ul.news > li > a:hover h3 {
 ul.news img {
 	width: 100%;
 	height: auto;
-	/* transition : all 0.25s ease; */
+	transition : all 0.25s ease;
 }
 
 ul.news > li > a:hover img {
@@ -47,7 +47,7 @@ a.more {
 @media only screen and (min-width: 961px) {
 
 	ul.news h3 {
-		font : normal 26px/34px "Constantia-Bold", "Times New Roman", serif;
+		font : normal 26px/28px "Constantia-Bold", "Times New Roman", serif;
 	}
 }
 
@@ -58,13 +58,13 @@ a.more {
 	}
 
 	ul.news h3 {
-		font : normal 22px/30px "Constantia-Bold", "Times New Roman", serif;
+		font : normal 22px/28px "Constantia-Bold", "Times New Roman", serif;
 	}
 }
 
 @media (max-width: 480px) {
 
 	ul.news h3 {
-		font : normal 20px/28px "Constantia-Bold", "Times New Roman", serif;
+		font : normal 20px/24px "Constantia-Bold", "Times New Roman", serif;
 	}
 }
