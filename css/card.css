@@ -4,58 +4,63 @@ div.card_photo {
 	display: flex;
 	max-width: 1020px;
 	margin: 30px auto;
-	padding-left: 20px;
-	padding-right: 20px;
 }
 
 div.card_photo > div > img,
 div.card_photo ul.gallery > li > img {
 	width: 100%;
-	height: auto;
+}
+
+div.card_photo ul.gallery > li > img {
+	height: 100%;
 }
 
 div.card_photo ul.gallery {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: center;
+	justify-content: flex-start;
 }
 
 div.card_photo ul.gallery > li:hover > img {
 	opacity: 0.75;
+	cursor: pointer;
 }
 
-div.table_wrap {
-	width: 100%;
-	margin: 0 auto;
-	padding-left: 20px;
-	padding-right: 20px;
+div.card_photo ul.gallery > li.selected > img {
+	border: 2px solid rgba(254, 96, 129, 1);
 }
 
-table.card {
+div.content > table {
+	display: block;
 	width: 100%;
 	max-width: 800px;
-	margin: 50px auto;
+	margin-top: 50px;
+	margin-bottom: 50px;
 	counter-reset: my_counter;
 }
 
-table.card > tbody {
+div.content > table > tbody {
 	display: block;
 }
 
-table.card tr {
+div.content > table tr {
 	display: flex;
+	justify-content: space-between;
+	/* display: block; */
+	width: 100%;
 	position: relative;
+	color: rgba(152, 152, 152, 1);
 	border-bottom: 1px solid rgba(152, 152, 152, 1);
 	counter-increment: my_counter;
 }
 
-table.card tr:before {
+div.content > table tr:before {
 	content: counter(my_counter);
 	position: absolute;
 	width: 25px;
 	height: 25px;
 	color: rgba(255, 255, 255, 1);
-	font : normal 16px/24px "SFUIDisplay-Regular", Arial, sans-serif;
+	font : normal 14px/25px "SFUIDisplay-Regular", Arial, sans-serif;
 	text-align: center;
 	background-color: rgba(254, 96, 124, 1);
 	border-radius: 50%;
@@ -63,22 +68,29 @@ table.card tr:before {
 
 }
 
-table.card td.rus {
-	width: 43%;
-	color: inherit;
+div.content > table td > strong,
+div.content > table td > b {
+	color: rgba(0, 0, 0, 1);
 }
 
-table.card td.fr {
-		color: rgba(152, 152, 152, 1);
-		width: 39%;
+div.content > table td:first-child {
+		width: 43%;
 }
 
-table.card td.art {
-		color: rgba(152, 152, 152, 1);
-		width: 18%;
+div.content > table td:nth-child(2) {
+	width: 39%;
+}
+
+div.content > table td:last-child {
+	width: 18%;
 }
 
 @media only screen and (min-width: 811px) {
+
+	div.card_photo {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
 
 	div.card_photo > div:first-child {
 		width: 60%;
@@ -90,36 +102,43 @@ table.card td.art {
 		width: calc(40% - 10px);
 	}
 
+	div.card_photo ul.gallery {
+		height: 100%;
+	}
+
 	div.card_photo ul.gallery > li {
 		margin-left: 10px;
 		margin-bottom: 10px;
 		width: calc((100% - 20px) / 2);
 	}
 
-	table.card > tbody {
+	div.content > table {
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	div.content > table > tbody {
 		margin-left: 60px;
 	}
 
-	table.card tr {
+	div.content > table tr {
 		padding-top: 24px;
 		padding-bottom: 24px;
 	}
 
-	table.card tr:before {
+	div.content > table tr:before {
 		top: 25px;
 		left: -50px;
 	}
 
-	table.card td.rus {
-		font: normal 18px/24px "SFUIDisplay-Bold", Arial, sans-serif;
+	div.content > table td:first-child {
+			padding-right: 100px;
 	}
 
-	table.card td.fr,
-	table.card td.art {
-		font : normal 18px/24px "SFUIDisplay-Regular", Arial, sans-serif;
+	div.content > table td {
+		font: normal 16px/24px "SFUIDisplay-Bold", Arial, sans-serif;
 	}
 }
-
 
 @media (max-width: 810px) {
 
@@ -128,11 +147,16 @@ table.card td.art {
 	}
 
 	div.card_photo > div:first-child {
-		margin: 20px auto;
+		margin: 20px 0 10px 10px;
+	}
+
+	div.card_photo > div > img {
+		padding-right: 10px;
 	}
 
 	div.card_photo ul.gallery {
 		flex-wrap: wrap;
+		width: 100%;
 	}
 
 	div.card_photo > .ul_wrap {
@@ -144,42 +168,56 @@ table.card td.art {
 		margin-right: 10px;
 	}
 
-	table.card tr:before {
-		left: calc(50% - 12px);
-		top: 10px;
-	}
+	/* div.content > table {
+		margin-left: 20px;
+		margin-right: 20px;
+	} */
 }
 
 @media (max-width: 811px) and (min-width: 541px) {
 
-	div.card_photo > div:first-child {
-		max-width: 600px;
+	div.card_photo {
+		padding-left: 20px;
+		padding-right: 20px;
 	}
 
 	div.card_photo ul.gallery > li {
 		width: calc((100% - 30px) / 3);
 	}
 
-	table.card > tbody {
-		margin-left: 20px;
+	div.content > table > tbody {
+		margin-left: 35px;
 	}
 
-	table.card tr {
-		padding-top: 50px;
+	div.content > table tr {
+		padding-top: 24px;
 		padding-bottom: 24px;
 	}
 
-	table.card td.rus {
+	div.content > table td {
 		font: normal 16px/20px "SFUIDisplay-Bold", Arial, sans-serif;
 	}
 
-	table.card td.fr,
-	table.card td.art {
-		font : normal 16px/20px "SFUIDisplay-Regular", Arial, sans-serif;
+	div.content > table tr:before {
+		left: -35px;
+		top: 24px;
+	}
+
+	div.content > table td:first-child {
+		padding-right: 20px;
+	}
+
+	div.content > table td:nth-child(2) {
+		padding-right: 20px;
 	}
 }
 
 @media (max-width: 540px) {
+
+	div.card_photo {
+		padding-left: 10px;
+		padding-right: 10px;
+	}
 
 	div.card_photo > div:first-child {
 		max-width: 480px;
@@ -189,24 +227,21 @@ table.card td.art {
 		width: calc((100% - 20px) / 2);
 	}
 
-	table.card td.rus {
+	div.content > table td {
 		font: normal 14px/28px "SFUIDisplay-Bold", Arial, sans-serif;
-	}
-
-	table.card td.fr,
-	table.card td.art {
-		font : normal 14px/28px "SFUIDisplay-Regular", Arial, sans-serif;
-	}
-
-	table.card td {
 		width: 100%;
 		text-align: center;
 	}
 
-	table.card tr {
+	div.content > table tr {
 		flex-direction: column;
 		align-items: center;
 		padding-top: 50px;
 		padding-bottom: 10px;
+	}
+
+	div.content > table tr:before {
+		left: calc(50% - 12px);
+		top: 10px;
 	}
 }

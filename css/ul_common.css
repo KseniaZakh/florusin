@@ -37,7 +37,7 @@ li.pagination > ol > li.prev > a:before {
 	content: "\F104";
 	font-family: "Font Awesome";
 	position: absolute;
-	color: rgba(254, 69, 129, 1);
+	color: rgba(254, 96, 129, 1);
 	text-align: center;
 	font-size: 24px;
 	width: 100%;
@@ -49,7 +49,7 @@ li.pagination > ol > li.next > a:before {
 	content: "\F105";
 	position: absolute;
 	font-family: "Font Awesome";
-	color: rgba(254, 69, 129, 1);
+	color: rgba(254, 96, 129, 1);
 	text-align: center;
 	font-size: 24px;
 	width: 100%;
