@@ -80,7 +80,8 @@ article div a:hover {
 	}
 
 	div.content p,
-	div.content ul	{
+	div.content ul,
+	div.card p	{
 		font : normal 18px/30px "SFUIDisplay-Regular", Arial, sans-serif;
 	}
 
@@ -118,7 +119,8 @@ article div a:hover {
 @media (min-width: 541px) and (max-width: 960px) {
 
 	div.brief,
-	div.content {
+	div.content,
+	div.card p {
 		padding-left: 30px;
 		padding-right: 30px;
 	}
@@ -148,7 +150,8 @@ article div a:hover {
 	}
 
 	div.content p,
-	div.content ul {
+	div.content ul,
+	div.card p {
 		font : normal 16px/20px "SFUIDisplay-Regular", Arial, sans-serif;
 	}
 
@@ -173,7 +176,8 @@ article div a:hover {
 
 @media (max-width: 540px) {
 	div.brief,
-	div.content {
+	div.content,
+	div.card {
 		padding-left: 20px;
 		padding-right: 20px;
 	}
