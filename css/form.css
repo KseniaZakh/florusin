@@ -29,7 +29,8 @@ ul.form > li.required2::after {
 }
 
 ul.form > li > input[type=text],
-form > div > textarea {
+form > div > textarea,
+input[type=submit] {
 	display: block;
 	-moz-appearance: none;
 	border-width: 0;
