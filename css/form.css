@@ -1,0 +1,281 @@
+@charset "UTF-8";
+
+div > form {
+	margin-top: 20px;
+}
+
+form > div {
+	display: flex;
+}
+
+ul.form > li {
+	position: relative;
+}
+
+ul.form > li.required::after {
+	content: "\002A";
+	position: absolute;
+	width: 8px;
+	height: 8px;
+	color: rgba(254, 96, 129, 1);
+}
+
+ul.form > li.required2::after {
+	content: "\002A";
+	display: none;
+	position: absolute;
+	width: 8px;
+	height: 8px;
+}
+
+ul.form > li > input[type=text],
+form > div > textarea {
+	display: block;
+	-moz-appearance: none;
+	border-width: 0;
+	border-style: none;
+	border-image: none;
+}
+
+form > div > textarea {
+	color: rgba(51, 51, 51, 1);
+	border: 2px solid rgba(243, 243, 243, 1);
+	resize: none;
+}
+
+ul.form > li > input[type=text] {
+	width: 100%;
+	height: 100%;
+	/* text-align: center; */
+	border-bottom: 2px solid rgba(243, 243, 243, 1);
+}
+
+ul.form > li > input.error {
+	border-bottom: 2px solid rgba(252, 71, 110, 1);
+}
+
+ul.form > li > input.success {
+	border-bottom: 2px solid rgba(00, 255, 00, 1);
+}
+
+ul.form span {
+	position: absolute;
+	color: rgba(51, 51, 51, 1);
+	transform : scale(1, 1);
+	transition : all 0.25s;
+}
+
+ul.form span.selected {
+	transform : scale(0, 0);
+}
+
+input[type=submit] {
+	height: 50px;
+	text-align: center;
+	color: rgba(255, 255, 255, 1);
+	background-color: rgba(254, 96, 129, 1);
+	border-radius: 5px;
+	cursor: pointer;
+	transition : all 0.25s ease;
+}
+
+input[type=submit]:hover {
+	background: rgba(252, 71, 110, 1);
+	/* transform : scale(1.2, 1); */
+}
+
+form > label,
+input[type="submit"] {
+	display: block;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 30px;
+}
+
+form span > a {
+	color: inherit;
+	text-decoration: none;
+}
+
+input[type="checkbox"] {
+	display: none;
+}
+
+span.checkbox {
+	position : relative;
+	display : inline-block;
+	width : 22px;
+	height : 22px;
+	border : solid 1px rgba(249, 249, 249, 1);
+	border-top: 2px solid rgba(243, 243, 243, 1);
+	border-radius : 4px;
+	background-color : rgba(255, 255, 255, 1);
+	color : rgba(254, 96, 129, 1);
+	cursor : pointer;
+	margin-right: 10px;
+}
+
+span.checkbox.checked::after {
+	position : absolute;
+	content : "";
+	top : 5px;
+	left : 5px;
+	z-index : 20;
+	width : 8px;
+	height : 4px;
+	border-left : solid 2px rgba(254, 96, 129, 1);
+	border-bottom : solid 2px rgba(254, 96, 129, 1);
+	content : "";
+	transform : rotate(-45deg);
+}
+
+@media only screen and (min-width: 811px) {
+	form span:not(.consent),
+	form > div > textarea {
+		font: normal 18px/24px "SFUIDisplay-Regular", Arial, sans-serif;
+	}
+
+	input[type="submit"] {
+		font: normal 18px/48px "SFUIDisplay-Bold", Arial, sans-serif;
+	}
+
+	ul.form  {
+		margin-right: 50px;
+	}
+
+	ul.form > li:not(:first-child) {
+		margin-top: 30px;
+	}
+
+	form > div {
+		align-items: flex-end;
+	}
+
+	form > div > textarea {
+		width: 465px;
+		height: 245px;
+		padding: 1em;
+	}
+
+	form > label > span.consent {
+		font: normal 20px/30px "SFUIDisplay-Regular", Arial, sans-serif;
+	}
+}
+
+@media (max-width: 810px) {
+
+	form span:not(.consent),
+	form > div > textarea {
+		font: normal 16px/20px "SFUIDisplay-Regular", Arial, sans-serif;
+	}
+
+	form > div {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	form > div > textarea {
+		margin-top: 30px;
+	}
+}
+
+@media (min-width: 541px) {
+
+		ul.form span {
+			top: 20px;
+			left: 10px;
+		}
+
+		ul.form > li {
+			width: 285px;
+			height: 60px;
+		}
+
+		ul.form > li.required::after {
+			top: 20px;
+			left: 33%;
+		}
+
+		form > label {
+			margin-top: 45px;
+			width: 480px;
+		}
+
+		input[type="submit"] {
+			width: 400px;
+		}
+}
+
+@media (max-width: 811px) and (min-width: 541px) {
+	ul.form > li:not(:first-child) {
+		margin-top: 30px;
+	}
+
+	form > div > textarea {
+		width: 465px;
+		height: 245px;
+		padding: 1em;
+	}
+
+	form > label > span.consent {
+		font: normal 18px/30px "SFUIDisplay-Regular", Arial, sans-serif;
+		word-wrap: normal;
+	}
+
+	input[type="submit"] {
+		font: normal 18px/48px "SFUIDisplay-Bold", Arial, sans-serif;
+	}
+}
+
+@media (max-width: 540px) {
+	ul.form {
+		max-width: 285px;
+		width: calc(100% - 40px);
+	}
+
+	ul.form > li {
+		width: 100%;
+		height: 40px;
+	}
+	ul.form > li:not(:first-child) {
+		margin-top: 20px;
+	}
+
+	form > div > textarea {
+		max-width: 465px;
+		max-height: 245px;
+		width: calc(100% - 40px);
+		height: 150px;
+		padding: 1em;
+	}
+
+	ul.form span {
+		top: 10px;
+		left: 10px;
+	}
+
+	ul.form > li.required::after {
+		top: 10px;
+		left: 35%;
+	}
+
+	form > label {
+		min-width: calc(100% - 40px);
+		margin: 35px 20px 30px;
+	}
+
+	form > label > span.consent {
+		font: normal 16px/24px "SFUIDisplay-Regular", Arial, sans-serif;
+		word-wrap: normal;
+	}
+
+	input[type="submit"] {
+		width: 280px;
+		font: normal 14px/48px "SFUIDisplay-Bold", Arial, sans-serif;
+		padding-left: 5px;
+		padding-right: 5px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}

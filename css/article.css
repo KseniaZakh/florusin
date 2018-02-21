@@ -62,13 +62,13 @@ div.content ul li:before {
 	left: -20px;
 }
 
-article div a {
+article > div a {
 	color: rgba(254, 96, 129, 1);
 	text-decoration: underline;
 	text-decoration-color: rgba(255, 184, 197, 1);
 }
 
-article div a:hover {
+article > div a:hover {
 	color: rgba(128, 128, 128, 1);
 	text-decoration: none;
 }

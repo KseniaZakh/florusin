@@ -19,4 +19,9 @@ $(document).ready(function() {
 				$("div.price").show();
 			}
 		});
+
+		// $("form ul span").click(function() {
+		// 	$(this).addClass("selected");
+		// 	$("form ul > li").removeClass("required").addClass("required2");
+		// });
 });
