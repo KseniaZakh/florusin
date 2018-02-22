@@ -16,7 +16,8 @@ div.content {
 
 article h1,
 article h2,
-div.brief p {
+div.brief p,
+div.communication {
 	text-align: center;
 }
 
@@ -81,7 +82,8 @@ article > div a:hover {
 
 	div.content p,
 	div.content ul,
-	div.card p	{
+	div.card p,
+	div.communication	{
 		font : normal 18px/30px "SFUIDisplay-Regular", Arial, sans-serif;
 	}
 
@@ -120,7 +122,8 @@ article > div a:hover {
 
 	div.brief,
 	div.content,
-	div.card p {
+	div.card p,
+	div.communication {
 		padding-left: 30px;
 		padding-right: 30px;
 	}
@@ -151,7 +154,8 @@ article > div a:hover {
 
 	div.content p,
 	div.content ul,
-	div.card p {
+	div.card p,
+	div.communication {
 		font : normal 16px/20px "SFUIDisplay-Regular", Arial, sans-serif;
 	}
 
@@ -177,7 +181,8 @@ article > div a:hover {
 @media (max-width: 540px) {
 	div.brief,
 	div.content,
-	div.card {
+	div.card,
+	div.communication {
 		padding-left: 20px;
 		padding-right: 20px;
 	}

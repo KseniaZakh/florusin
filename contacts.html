@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+@<!DOCTYPE html>
 <html lang="ru">
 	<head>
     	<meta charset="UTF-8" />
@@ -10,9 +10,9 @@
 		<link rel="stylesheet" href="css/header.css" />
 		<link rel="stylesheet" href="css/nav.css" />
 		<link rel="stylesheet" href="css/article.css" />
-		<link rel="stylesheet" href="css/card.css" />
+		<link rel="stylesheet" href="css/contacts.css" />
 		<link rel="stylesheet" href="css/form.css" />
-		<!-- <link rel="stylesheet" href="css/catalogue.css" /> -->
+		<link rel="stylesheet" href="css/catalogue.css" />
 		<link rel="stylesheet" href="css/footer.css" />
 		<script defer src="js/jquery.js"></script>
 		<script defer src="js/base.js"></script>
@@ -20,6 +20,7 @@
 		<script defer src="js/form.js"></script>
 		<title>ФЛОРУСИН</title>
 	</head>
+
 	<body onload="resize();" onresize="resize();">
 		<div class="container">
 			<header>
@@ -52,9 +53,9 @@
 
 				<div class="communication">
 					<span>Свяжитесь с нами</span>
-					<p>Оставьте ваши контактные даные, чтобы мы могли ответить вам на
-						ваши вопросы. По возможности, напишите немного о вашей компании, ч
-						чтобы вы могли предметно пообщаться.</p>
+					<p>Оставьте ваши контактные даные, чтобы мы могли ответить на ваши вопросы.<br/>
+						По возможности, напишите немного о вашей компании, чтобы мы могли предметно
+						пообщаться.</p>
 					<form action="?action=price" method="post">
 						<div>
 							<ul class="form">
@@ -73,8 +74,9 @@
 							</ul>
 							<textarea name="message" placeholder="Ваш вопрос или комментарий"></textarea>
 						</div>
-						<input type="submit" name="submit" value="Отправить" />
+						<input class="contacts" type="submit" name="submit" value="Отправить" />
 					</form>
+				</div>
 			</article>
 
 			<footer>
@@ -88,5 +90,5 @@
 					</div>
 				</footer>
 			</div>
-	</body>
-</html>
+		</body>
+	</html>

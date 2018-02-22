@@ -13,23 +13,16 @@ ul.form > li {
 }
 
 ul.form > li.required::after {
-	content: "\002A";
+	content: "\273b";
 	position: absolute;
-	width: 8px;
-	height: 8px;
+	font : normal 20px/60px Arial, Tahoma, Verdana, sans-serif;
+	right: 0;
+	top: -20px;
 	color: rgba(254, 96, 129, 1);
 }
 
-ul.form > li.required2::after {
-	content: "\002A";
-	display: none;
-	position: absolute;
-	width: 8px;
-	height: 8px;
-}
-
 ul.form > li > input[type=text],
-form > div > textarea,
+div.message > textarea,
 input[type=submit] {
 	display: block;
 	-moz-appearance: none;
@@ -38,16 +31,29 @@ input[type=submit] {
 	border-image: none;
 }
 
-form > div > textarea {
-	color: rgba(51, 51, 51, 1);
+ul.form > li > input[type=text],
+div.message > textarea {
+	opacity: 0.8;
+}
+
+div.message {
+	position: relative;
+	padding: 1em;
 	border: 2px solid rgba(243, 243, 243, 1);
+}
+
+div.message > textarea {
+	width: 100%;
+	height: 100%;
 	resize: none;
+	border: none;
 }
 
 ul.form > li > input[type=text] {
 	width: 100%;
 	height: 100%;
-	/* text-align: center; */
+	white-space: nowrap;
+	background-color: rgba(255, 255, 255, 1);
 	border-bottom: 2px solid rgba(243, 243, 243, 1);
 }
 
@@ -59,14 +65,21 @@ ul.form > li > input.success {
 	border-bottom: 2px solid rgba(00, 255, 00, 1);
 }
 
-ul.form span {
+ul.form span,
+div.message > span {
 	position: absolute;
-	color: rgba(51, 51, 51, 1);
+	height: 100%;
+	width: auto;
 	transform : scale(1, 1);
 	transition : all 0.25s;
 }
 
-ul.form span.selected {
+ul.form span {
+	white-space: nowrap;
+}
+
+ul.form span.selected,
+div.message > span.selected {
 	transform : scale(0, 0);
 }
 
@@ -82,7 +95,6 @@ input[type=submit] {
 
 input[type=submit]:hover {
 	background: rgba(252, 71, 110, 1);
-	/* transform : scale(1.2, 1); */
 }
 
 form > label,
@@ -92,11 +104,6 @@ input[type="submit"] {
 	margin-left: auto;
 	margin-right: auto;
 	margin-bottom: 30px;
-}
-
-form span > a {
-	color: inherit;
-	text-decoration: none;
 }
 
 input[type="checkbox"] {
@@ -131,9 +138,15 @@ span.checkbox.checked::after {
 	transform : rotate(-45deg);
 }
 
+input.contacts {
+	margin-top: 35px;
+	margin-bottom: 70px;
+}
+
 @media only screen and (min-width: 811px) {
 	form span:not(.consent),
-	form > div > textarea {
+	div.message > textarea,
+	input[type=text] {
 		font: normal 18px/24px "SFUIDisplay-Regular", Arial, sans-serif;
 	}
 
@@ -149,14 +162,9 @@ span.checkbox.checked::after {
 		margin-top: 30px;
 	}
 
-	form > div {
-		align-items: flex-end;
-	}
-
-	form > div > textarea {
+	div.message {
 		width: 465px;
-		height: 245px;
-		padding: 1em;
+		align-self: stretch;
 	}
 
 	form > label > span.consent {
@@ -166,8 +174,10 @@ span.checkbox.checked::after {
 
 @media (max-width: 810px) {
 
+
 	form span:not(.consent),
-	form > div > textarea {
+	div.message > textarea,
+	input[type=text] {
 		font: normal 16px/20px "SFUIDisplay-Regular", Arial, sans-serif;
 	}
 
@@ -176,7 +186,7 @@ span.checkbox.checked::after {
 		align-items: center;
 	}
 
-	form > div > textarea {
+	div.message {
 		margin-top: 30px;
 	}
 }
@@ -188,14 +198,14 @@ span.checkbox.checked::after {
 			left: 10px;
 		}
 
+		div.message > span  {
+			top: 15px;
+			left: 20px;
+		}
+
 		ul.form > li {
 			width: 285px;
 			height: 60px;
-		}
-
-		ul.form > li.required::after {
-			top: 20px;
-			left: 33%;
 		}
 
 		form > label {
@@ -206,17 +216,21 @@ span.checkbox.checked::after {
 		input[type="submit"] {
 			width: 400px;
 		}
+
+		input.contacts {
+			width: 280px;
+		}
 }
 
 @media (max-width: 811px) and (min-width: 541px) {
+
 	ul.form > li:not(:first-child) {
 		margin-top: 30px;
 	}
 
-	form > div > textarea {
+	div.message {
 		width: 465px;
 		height: 245px;
-		padding: 1em;
 	}
 
 	form > label > span.consent {
@@ -230,6 +244,7 @@ span.checkbox.checked::after {
 }
 
 @media (max-width: 540px) {
+
 	ul.form {
 		max-width: 285px;
 		width: calc(100% - 40px);
@@ -243,22 +258,17 @@ span.checkbox.checked::after {
 		margin-top: 20px;
 	}
 
-	form > div > textarea {
+	div.message {
 		max-width: 465px;
 		max-height: 245px;
 		width: calc(100% - 40px);
 		height: 150px;
-		padding: 1em;
 	}
 
-	ul.form span {
+	ul.form span,
+	div.message > span  {
 		top: 10px;
 		left: 10px;
-	}
-
-	ul.form > li.required::after {
-		top: 10px;
-		left: 35%;
 	}
 
 	form > label {
@@ -278,5 +288,9 @@ span.checkbox.checked::after {
 		padding-right: 5px;
 		margin-left: auto;
 		margin-right: auto;
+	}
+
+	input.contacts {
+		width: 180px;
 	}
 }

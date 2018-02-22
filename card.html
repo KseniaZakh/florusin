@@ -133,19 +133,22 @@
 						<div>
 							<ul class="form">
 								<li class="required">
-										<input type="text" name="username" value="" required/>
-										<span class="user_name">Ваше имя</span>
+										<span>Ваше имя</span>
+										<input class="success" type="text" name="username" value="" />
 								</li>
 								<li class="required">
-										<input type="text" name="user_email" value="" required/>
-										<span class="user_email">Ваш email</span>
+										<span>Ваш email</span>
+										<input type="text" name="user_email" value="" />
 								</li>
 								<li>
-										<input  type="text" name="user_phone" value=""/>
-										<span class="user_phone">Ваш телефон</span>
+										<span>Ваш телефон</span>
+										<input class="error" type="text" name="user_phone" value=""/>
 								</li>
 							</ul>
-							<textarea name="message" placeholder="Ваши пожелания"></textarea>
+							<div class="message">
+								<span>Ваши пожелания</span>
+								<textarea name="message"></textarea>
+							</div>
 						</div>
 						<label>
 							<input type="checkbox" name="consent" value="" />

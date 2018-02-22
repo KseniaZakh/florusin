@@ -1,6 +1,20 @@
 @charset "UTF-8";
 
 div.communication {
-	max-width: 800px;
-	margin: 0 auto;
+	max-width: 900px;
+	margin: 30px auto;
+}
+
+/* div.communication > span,
+div.communication > p {
+	text-align: center;
+} */
+
+div.communication > span {
+	display: block;
+	font : normal 30px/30px "SFUIDisplay-Regular", Arial, sans-serif;
+}
+
+div.communication > p {
+	/* font : normal 20px/30px "SFUIDisplay-Regular", Arial, sans-serif; */
 }
