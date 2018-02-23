@@ -8,11 +8,12 @@ $(document).ready(function() {
 		});
 
 		$("ul.card_choiсe > li").click(function() {
-			$(this).data("class");
-			$("ul.card_choiсe > li").removeClass("selected");
-			$(this).addClass("selected");
-			$("div.card").hide();
-			$("div." + $(this).data("class")).show();
+			if ($("ul.card_choiсe > li.selected").lenght!=0) {
+				$("ul.card_choiсe > li").removeClass("selected");
+				$(this).addClass("selected");
+				$("div.card").hide();
+				$("div.card." + $("ul.card_choiсe > li.selected").data("class")).show();
+			}
 		});
 
 });

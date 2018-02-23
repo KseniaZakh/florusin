@@ -114,15 +114,7 @@ div.card {
 }
 
 div.price {
-	/* display: none; */
-}
-
-div.choco > img {
-	width: 100%;
-}
-
-div.description {
-		/* display: none; */
+	display: none;
 }
 
 @media only screen and (min-width: 811px) {
