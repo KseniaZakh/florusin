@@ -8,20 +8,11 @@ $(document).ready(function() {
 		});
 
 		$("ul.card_choiсe > li").click(function() {
+			$(this).data("class");
 			$("ul.card_choiсe > li").removeClass("selected");
 			$(this).addClass("selected");
-				if ($("ul.card_choiсe > li:first-child").hasClass("selected")) {
-				$("div.price").hide();
-				$("div.description").show();
-			}
-			if ($("ul.card_choiсe > li:last-child").hasClass("selected")) {
-				$("div.description").hide();
-				$("div.price").show();
-			}
+			$("div.card").hide();
+			$("div." + $(this).data("class")).show();
 		});
 
-		// $("form ul span").click(function() {
-		// 	$(this).addClass("selected");
-		// 	$("form ul > li").removeClass("required").addClass("required2");
-		// });
 });

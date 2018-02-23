@@ -33,7 +33,7 @@ input[type=submit] {
 
 ul.form > li > input[type=text],
 div.message > textarea {
-	opacity: 0.8;
+	opacity: 0.75;
 }
 
 div.message {
@@ -70,6 +70,7 @@ div.message > span {
 	position: absolute;
 	height: 100%;
 	width: auto;
+	color: rgba(0, 0, 0, 1);
 	transform : scale(1, 1);
 	transition : all 0.25s;
 }
