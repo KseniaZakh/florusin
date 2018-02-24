@@ -1,20 +1,114 @@
 @charset "UTF-8";
 
+ul.contacts {
+	display: flex;
+	max-width: 1000px;
+	margin: 75px auto;
+}
+
+ul.contacts > li {
+	position: relative;
+	text-align: center;
+	padding-bottom: 20px;
+}
+
+ul.contacts > li > span,
+div.communication > span {
+	display: block;
+}
+
+ul.contacts > li > span.way {
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+ul.contacts > li::after {
+	position: absolute;
+	content: "";
+	width: 60px;
+	height: 70px;
+	/* background-position : 0% 0%; */
+	background-repeat : no-repeat;
+	background-size : contain;
+}
+
+ul.contacts > li:first-child::after {
+	background-image : url("../img/phone.png");
+}
+
+ul.contacts > li:nth-child(2)::after {
+	background-image : url("../img/address.png");
+}
+
+ul.contacts > li:last-child::after {
+	background-image : url("../img/letter.png");
+}
+
 div.communication {
 	max-width: 900px;
 	margin: 30px auto;
 }
 
-/* div.communication > span,
-div.communication > p {
-	text-align: center;
-} */
 
-div.communication > span {
-	display: block;
-	font : normal 30px/30px "SFUIDisplay-Regular", Arial, sans-serif;
+@media only screen and (min-width: 961px) {
+
+	ul.contacts > li > span {
+		font : normal 20px/30px "SFUIDisplay-Regular", Arial, sans-serif;
+	}
+
+	div.communication > span {
+		font : normal 30px/30px "SFUIDisplay-Regular", Arial, sans-serif;
+	}
 }
 
-div.communication > p {
-	/* font : normal 20px/30px "SFUIDisplay-Regular", Arial, sans-serif; */
+@media (min-width: 601px) {
+
+	ul.contacts > li {
+		width: calc(100% / 3);
+		padding-top: 100px;
+	}
+
+	ul.contacts > li:not(:last-child) {
+		border-right: 1px solid rgba(254, 96, 129, 1);
+	}
+
+	ul.contacts > li::after {
+		left: calc(50% - 30px);
+		top: 0;
+	}
+}
+
+@media (min-width: 601px) and (max-width: 960px) {
+
+	ul.contacts > li > span {
+		font : normal 18px/24px "SFUIDisplay-Regular", Arial, sans-serif;
+	}
+
+	div.communication > span {
+		font : normal 24px/30px "SFUIDisplay-Regular", Arial, sans-serif;
+	}
+}
+
+@media (max-width: 600px) {
+
+	ul.contacts {
+		flex-direction: column;
+	}
+
+	ul.contacts > li {
+		width: 100%;
+		padding-left: 80px;
+	}
+
+	ul.contacts > li > span {
+		font : normal 16px/24px "SFUIDisplay-Regular", Arial, sans-serif;
+	}
+
+	ul.contacts > li:not(:last-child) {
+		border-bottom: 1px solid rgba(254, 96, 129, 1);
+	}
+
+	div.communication > span {
+		font : normal 20px/24px "SFUIDisplay-Regular", Arial, sans-serif;
+	}
 }

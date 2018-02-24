@@ -123,7 +123,8 @@ article > div a:hover {
 	div.brief,
 	div.content,
 	div.card p,
-	div.communication {
+	div.communication,
+	ul.contacts {
 		padding-left: 30px;
 		padding-right: 30px;
 	}
@@ -182,7 +183,8 @@ article > div a:hover {
 	div.brief,
 	div.content,
 	div.card,
-	div.communication {
+	div.communication,
+	ul.contacts {
 		padding-left: 20px;
 		padding-right: 20px;
 	}

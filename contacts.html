@@ -1,4 +1,4 @@
-@<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru">
 	<head>
     	<meta charset="UTF-8" />
@@ -12,7 +12,7 @@
 		<link rel="stylesheet" href="css/article.css" />
 		<link rel="stylesheet" href="css/contacts.css" />
 		<link rel="stylesheet" href="css/form.css" />
-		<link rel="stylesheet" href="css/catalogue.css" />
+		<!-- <link rel="stylesheet" href="css/catalogue.css" /> -->
 		<link rel="stylesheet" href="css/footer.css" />
 		<script defer src="js/jquery.js"></script>
 		<script defer src="js/base.js"></script>
@@ -51,6 +51,24 @@
 					<p>С нами можно связаться следующими способами:</p>
 				</div>
 
+				<ul class="contacts">
+					<li>
+						<span class="way"><strong>Телефоны</strong></span>
+						<span> +7 (494)648-82-34<br/> +7(909)690-92-91
+						</span>
+					</li>
+					<li>
+						<span class="way"><strong>Адрес</strong></span>
+						<span> г. Москва (г. Зеленоград),<br/> Проезд 4801,<br/> д. 7, строение 1
+						</span>
+					</li>
+					<li>
+						<span class="way"><strong>Электронная почта</strong></span>
+						<span>florusin@gmail.com
+						</span>
+					</li>
+				</ul>
+
 				<div class="communication">
 					<span>Свяжитесь с нами</span>
 					<p>Оставьте ваши контактные даные, чтобы мы могли ответить на ваши вопросы.<br/>
@@ -60,19 +78,22 @@
 						<div>
 							<ul class="form">
 								<li class="required">
-										<input type="text" name="username" value="" required/>
-										<span class="user_name">Ваше имя</span>
+										<span>Ваше имя</span>
+										<input class="success" type="text" name="username" value="" />
 								</li>
 								<li class="required">
-										<input type="text" name="user_email" value="" required/>
-										<span class="user_email">Ваш email</span>
+									<span>Ваш email</span>
+											<input type="text" name="user_email" value="" />
 								</li>
 								<li>
-										<input  type="text" name="user_phone" value=""/>
-										<span class="user_phone">Ваш телефон</span>
+										<span>Ваш телефон</span>
+										<input class="error" type="text" name="user_phone" value=""/>
 								</li>
 							</ul>
-							<textarea name="message" placeholder="Ваш вопрос или комментарий"></textarea>
+							<div class="message">
+								<span>Ваши пожелания</span>
+								<textarea name="message"></textarea>
+							</div>
 						</div>
 						<input class="contacts" type="submit" name="submit" value="Отправить" />
 					</form>
