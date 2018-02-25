@@ -128,7 +128,7 @@
 						бизнеса, чтобы мы могли сформировать для вас индивидуальное
 						 предложение. А пока мы готовим для вас это предложение,
 						 вы сможете ознакомиться с прайсом текущей коллекции.</p>
-					<form action="?action=price" method="post">
+					<form action="?action=price" method="get">
 						<div>
 							<ul class="form">
 								<li class="required">
@@ -150,11 +150,13 @@
 							</div>
 						</div>
 						<label>
-							<div class="required"><input type="checkbox" name="consent" value="" /></div>
-							<span class="checkbox"></span>
+							<div class="required">
+								<input type="checkbox" name="consent" value="Y" />
+								<span class="checkbox"></span>
+							</div>
 							<span class="consent">Я согласен на <a href="#" title="Согласие">обработку персональных данных</a></span>
 						</label>
-						<button type="button">Отправить</button>
+						<button class="submit" type="button">Отправить</button>
 					</form>
 				</div>
 			</article>

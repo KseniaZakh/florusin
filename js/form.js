@@ -23,6 +23,8 @@ $(document).ready(function() {
 			}
 		});
 
+
+
 	$(".field").on("propertychange change click keyup input paste", function() {
 		var element = this;
 		if (!$(element).prev("span").hasClass("selected")) {
@@ -58,6 +60,23 @@ $(document).ready(function() {
 					}
 				}
 
+				$("span.checkbox").on ("click",function() {
+					var agree = this;
+					if (!$(agree).hasClass("checked")) {
+							$(agree).addClass("checked");
+							if ($(agree).prev("input").length!=0) {
+								$(agree).prev("input").prop("checked", true);
+								$(agree).prev("input").addClass("success");
+							}
+						}
+						else {
+							$(agree).removeClass("checked");
+							if ($(agree).prev("input").length!=0) {
+								$(agree).prev("input").prop("checked", false);
+							}
+						}
+					});
+
 				if ($(".required > input").length != $(".required > input.success").length) {
 					if ($("button.submit").hasClass("active")) {
 						$("button.submit").removeClass("active");
@@ -68,24 +87,15 @@ $(document).ready(function() {
 							$("button.submit").addClass("active");
 						}
 					}
+
 			}, 100);
 
 		});
 
-	$("span.checkbox").on ("click",function() {
-		if (!$(this).hasClass("checked")) {
-				$(this).addClass("checked");
-				if ($(this).prev("input").length!=0) {
-					$(this).prev("input").prop("checked", true);
-					$(this).prev("input").addClass("success");
+		$("button.submit").on("click", function() {
+				if ($(this).hasClass("active")) {
+					$(this).parents("form").submit();
 				}
-			}
-			else {
-				$(this).removeClass("checked");
-				if ($(this).prev("input").length!=0) {
-					$(this).prev("input").prop("checked", false);
-				}
-			}
 		});
 
 	});
