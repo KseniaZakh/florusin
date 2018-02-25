@@ -133,28 +133,28 @@
 							<ul class="form">
 								<li class="required">
 										<span>Ваше имя</span>
-										<input type="text" name="username" value="" />
+										<input class="field" type="text" name="username" value="" />
 								</li>
 								<li class="required">
 										<span>Ваш email</span>
-										<input type="text" name="user_email" value="" />
+										<input class="field" type="text" name="user_email" value="" />
 								</li>
 								<li>
 										<span>Ваш телефон</span>
-										<input type="text" name="user_phone" value=""/>
+										<input class="field" type="text" name="user_phone" value=""/>
 								</li>
 							</ul>
 							<div class="message">
 								<span>Ваши пожелания</span>
-								<textarea name="message"></textarea>
+								<textarea class="field" name="message"></textarea>
 							</div>
 						</div>
 						<label>
-							<input type="checkbox" name="consent" value="" />
-							<span class="checkbox checked"></span>
+							<div class="required"><input type="checkbox" name="consent" value="" /></div>
+							<span class="checkbox"></span>
 							<span class="consent">Я согласен на <a href="#" title="Согласие">обработку персональных данных</a></span>
 						</label>
-						<input type="submit" name="submit" value="Отправить" />
+						<button type="button">Отправить</button>
 					</form>
 				</div>
 			</article>

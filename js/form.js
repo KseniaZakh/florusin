@@ -1,6 +1,16 @@
+function isName(name) {
+	var regex = new RegExp(/^([а-яА-Яa-zA-Z _.-]{3,30})+$/);
+	return regex.test(name);
+}
+
+function isEmail(email) {
+	var regex = new RegExp(/^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i);
+	return regex.test(email);
+}
+
 $(document).ready(function() {
 
-	$("input[type=text]").on("blur", function() {
+	$(".field").on("blur", function() {
 		if (!$(this).val()) {
 			if ($(this).prev("span").hasClass("selected")) {
 				$(this).prev("span").removeClass("selected");
@@ -13,17 +23,7 @@ $(document).ready(function() {
 			}
 		});
 
-		function isName(name) {
-			var regex = new RegExp(/^([а-яА-Яa-zA-Z _.-]{3,30})+$/);
-  			return regex.test(name);
-		}
-
-		function isEmail(email) {
-			var regex = new RegExp(/^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i);
-  			return regex.test(email);
-		}
-
-		$("input[type=text]").on("propertychange change click keyup input paste", function() {
+	$(".field").on("propertychange change click keyup input paste", function() {
 		var element = this;
 		if (!$(element).prev("span").hasClass("selected")) {
 			$(element).prev("span").addClass("selected");
@@ -57,38 +57,35 @@ $(document).ready(function() {
 						}
 					}
 				}
+
+				if ($(".required > input").length != $(".required > input.success").length) {
+					if ($("button.submit").hasClass("active")) {
+						$("button.submit").removeClass("active");
+						}
+					}
+					else {
+						if (!$("button.submit").hasClass("active")) {
+							$("button.submit").addClass("active");
+						}
+					}
 			}, 100);
+
 		});
 
-		// $("div.message > textarea").on("propertychange change click keyup input paste", function() {
-		// 	var element = this;
-		// 	if (!$(element).prev("span").hasClass("selected")) {
-		// 		$(element).prev("span").addClass("selected");
-		// 		}
-		// 	});
-		//
-		// 	$("div.message > textarea").on("blur", function() {
-		// 		if (!$(this).val()) {
-		// 			if ($(this).prev("span").hasClass("selected")) {
-		// 				$(this).prev("span").removeClass("selected");
-		// 			}
-		// 		}
-		// 		else {
-		// 			if (!$(this).prev("span").hasClass("selected")) {
-		// 				$(this).prev("span")addClass("selected");
-		// 			}
-		// 		}
-		// 	});
-
-		$("span.checkbox").on ("click",function() {
-			var elem = this;
-			if (!$(elem).hasClass("checked")) {
-				$(elem).addClass("checked");
+	$("span.checkbox").on ("click",function() {
+		if (!$(this).hasClass("checked")) {
+				$(this).addClass("checked");
+				if ($(this).prev("input").length!=0) {
+					$(this).prev("input").prop("checked", true);
+					$(this).prev("input").addClass("success");
+				}
 			}
 			else {
-				$(elem).removeClass("checked");
+				$(this).removeClass("checked");
+				if ($(this).prev("input").length!=0) {
+					$(this).prev("input").prop("checked", false);
+				}
 			}
 		});
 
-
-		});
+	});
